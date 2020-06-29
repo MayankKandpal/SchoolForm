@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <CheckBox
+        android:id="@+id/cbT1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="21dp"
+        android:text="Training"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvFirst"
+        app:layout_constraintTop_toBottomOf="@+id/tvFirst" />
+
+    <CheckBox
+        android:id="@+id/cbT3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="17dp"
+        android:text="Training"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvFirst2"
+        app:layout_constraintTop_toBottomOf="@+id/tvFirst2" />
+
+    <EditText
+        android:id="@+id/etTFee2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Training Fee "
+        android:inputType="number"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/cbT4"
+        app:layout_constraintTop_toBottomOf="@+id/cbT4" />
+
+
+    <CheckBox
+        android:id="@+id/cbT4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="License"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/cbT3"
+        app:layout_constraintTop_toBottomOf="@+id/cbT3" />
+
+    <EditText
+        android:id="@+id/etLFee2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:ems="10"
+        android:hint="License Fee"
+        android:inputType="number"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/etTFee2"
+        app:layout_constraintTop_toBottomOf="@+id/etTFee2" />
+
+    <CheckBox
+        android:id="@+id/cbT2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="License"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/cbT1"
+        app:layout_constraintTop_toBottomOf="@+id/cbT1" />
+
+    <EditText
+        android:id="@+id/etTFee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="9dp"
+        android:ems="10"
+        android:hint="Training Fee "
+        android:inputType="number"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/cbT2"
+        app:layout_constraintTop_toBottomOf="@+id/cbT2" />
+
+    <EditText
+        android:id="@+id/etLFee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="License Fee"
+        android:inputType="number"
+        android:text=""
+        app:layout_constraintStart_toStartOf="@+id/etTFee"
+        app:layout_constraintTop_toBottomOf="@+id/etTFee" />
+
+    <EditText
+        android:id="@+id/tvFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:hint="Vehicle Type"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/tvFirst2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="54dp"
+        android:ems="10"
+        android:hint="Vehicle Type"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLFee" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

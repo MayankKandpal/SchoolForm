@@ -36,11 +36,13 @@ import java.sql.Time;
 import java.util.Calendar;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements exampleDialog.ExampleDialogListener {
     TextInputEditText etName,etPhone,etEmail,etAddress,etYear,etLocation;
-    Button imagebtn;
+    Button imagebtn,dialog_button;
     Button button,btnOpen,btnClose;
-    DatabaseReference dbref;
+    String namefirst,namesecond,tfeefirst,lfeefirst,tfeesecond,lfeesecond;
+    Boolean trainingfirst,licensefirst,trainingsecond,licensesecond;
+    DatabaseReference dbref,rfr;
     TextView tvOpen,tvClose;
     ImageView imView;
     private Uri filePath;
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         etAddress = findViewById(R.id.etAddress);
         etLocation = findViewById(R.id.etLocation);
         etYear = findViewById(R.id.etYear);
+        rfr = FirebaseDatabase.getInstance().getReference("Services");
         dbref = FirebaseDatabase.getInstance().getReference("School" );
         button = findViewById(R.id.button);
         btnOpen =findViewById(R.id.btnOpen);
@@ -72,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         btnClose = findViewById(R.id.btnClose);
         tvClose = findViewById(R.id.tvClose);
         tvOpen =(TextView)findViewById(R.id.tvOpen);
+        dialog_button = findViewById(R.id.dialog_button);
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +128,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(intent,"Select Image"),1);
             }
         });
+        dialog_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
 
+
+    }
+
+    private void openDialog() {
+    exampleDialog ExampleDialog = new exampleDialog();
+    ExampleDialog.show(getSupportFragmentManager(),"example dialog");
     }
 
     private void uploadImage() {
@@ -171,7 +187,33 @@ public class MainActivity extends AppCompatActivity {
      String closetime = tvClose.getText().toString().trim();
      example Example = new example(name,phone,email,address,location,year,opentime,closetime);
      String id = String.valueOf(System.currentTimeMillis());
+     String id2="Second type of vehicle";
+     servicesTwoWheeler twoWheeler = new servicesTwoWheeler(namefirst,tfeefirst,lfeefirst,trainingfirst,licensefirst);
+     servicesFourWheeler fourWheeler = new servicesFourWheeler(namesecond,tfeesecond,lfeesecond,trainingsecond,licensesecond);
      dbref.child(id).push().setValue(Example);
+     rfr.child(id2).push().setValue(fourWheeler);
+     rfr.child(id).push().setValue(twoWheeler);
         Toast.makeText(this, "School Added", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void applyTexts(String name1, Boolean training1, Boolean license1, String tfee1, String lfee1, String name2, Boolean training2, Boolean license2, String tfee2, String lfee2) {
+        namefirst = name1;
+        namesecond = name2;
+        lfeefirst = lfee1;
+        lfeesecond = lfee2;
+        tfeefirst = tfee1;
+        tfeesecond = tfee2;
+        trainingfirst=training1;
+        trainingsecond=training2;
+        licensefirst = license1;
+        licensesecond = license2;
+    }
+
+    @Override
+    public void applyTexts() {
+
+    }
+
+
 }
