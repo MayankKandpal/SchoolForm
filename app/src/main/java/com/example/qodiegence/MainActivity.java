@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements exampleDialog.Exa
     private Uri filePath;
     private FirebaseStorage storage;
     private StorageReference storageReference;
-
     int t1hour,t1minute,t2hour,t2minute;
 
 
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements exampleDialog.Exa
         btnOpen = findViewById(R.id.btnOpen);
         btnClose = findViewById(R.id.btnClose);
         tvClose = findViewById(R.id.tvClose);
-        tvOpen =(TextView)findViewById(R.id.tvOpen);
+        tvOpen =findViewById(R.id.tvOpen);
         dialog_button = findViewById(R.id.dialog_button);
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +116,9 @@ public class MainActivity extends AppCompatActivity implements exampleDialog.Exa
            public void onClick(View v) {
                addData();
                uploadImage();
+               Intent intentopen = new Intent(MainActivity.this,AddVehicles.class);
+               startActivity(intentopen);
+
            }
        });
         imagebtn.setOnClickListener(new View.OnClickListener() {

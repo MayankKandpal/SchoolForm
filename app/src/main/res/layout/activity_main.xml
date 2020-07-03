@@ -161,6 +161,14 @@
                 android:layout_gravity="end"
                 android:layout_margin="10dp"/>
 
+            <Button
+                android:id="@+id/btnVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_gravity="end"
+                android:text="+ ADD Vehicle" />
+
         </LinearLayout>
     </ScrollView>
 
