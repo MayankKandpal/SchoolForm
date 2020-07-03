@@ -58,7 +58,6 @@ public class exampleDialog extends AppCompatDialogFragment {
         cbT2 = view.findViewById(R.id.cbT2);
         cbT3 = view.findViewById(R.id.cbT3);
         cbT4 = view.findViewById(R.id.cbT4);
-
         return builder.create();
     }
 

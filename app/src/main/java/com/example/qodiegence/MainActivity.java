@@ -39,7 +39,7 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity implements exampleDialog.ExampleDialogListener {
     TextInputEditText etName,etPhone,etEmail,etAddress,etYear,etLocation;
     Button imagebtn,dialog_button;
-    Button button,btnOpen,btnClose;
+    Button button,btnOpen,btnClose,btnVehicle;
     String namefirst,namesecond,tfeefirst,lfeefirst,tfeesecond,lfeesecond;
     Boolean trainingfirst,licensefirst,trainingsecond,licensesecond;
     DatabaseReference dbref,rfr;
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements exampleDialog.Exa
         btnClose = findViewById(R.id.btnClose);
         tvClose = findViewById(R.id.tvClose);
         tvOpen =findViewById(R.id.tvOpen);
+        btnVehicle = findViewById(R.id.btnVehicle);
         dialog_button = findViewById(R.id.dialog_button);
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,15 +111,19 @@ public class MainActivity extends AppCompatActivity implements exampleDialog.Exa
                 timePickerDialog.show();
             }
         });
+        btnVehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentopen = new Intent(MainActivity.this,AddVehicles.class);
+                startActivity(intentopen);
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                addData();
                uploadImage();
-               Intent intentopen = new Intent(MainActivity.this,AddVehicles.class);
-               startActivity(intentopen);
-
            }
        });
         imagebtn.setOnClickListener(new View.OnClickListener() {
